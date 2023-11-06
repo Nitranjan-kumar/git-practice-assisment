@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+</head>
+<body>
+    <input type="number" id="number1" placeholder="Enter your 1st number">
+    <input type="number" id="number2" placeholder="Enter your 2nd number">
+
+    <button onclick="add()">Addition</button>
+    <button onclick="sub()">Subtract</button>
+    <button onclick="multi()">Multiply</button>
+    <button onclick="divide()">Division</button>
+
+    <p id="result">Result will be displayed here</p>
+</body>
+</html>
+<script>
+    function add() {
+        var first =  parseFloat(document.getElementById("number1").value);
+        var second = parseFloat(document.getElementById("number2").value);
+        var result = first + second;
+        document.getElementById("result").textContent = "Result: " + result;
+    }
+
+    function sub() {
+        var first =  parseFloat(document.getElementById("number1").value);
+        var second = parseFloat(document.getElementById("number2").value);
+        var result = first - second;
+        document.getElementById("result").textContent = "Result: " + result;
+    }
+
+    function multi() {
+        var first =  parseFloat(document.getElementById("number1").value);
+        var second = parseFloat(document.getElementById("number2").value);
+        var result = first * second;
+        document.getElementById("result").textContent = "Result: " + result;
+    }
+
+    function divide() {
+        var first =  parseFloat(document.getElementById("number1").value);
+        var second = parseFloat(document.getElementById("number2").value);
+        if (second !== 0) {
+            var result = first / second;
+            document.getElementById("result").textContent = "Result: " + result;
+        } else {
+            document.getElementById("result").textContent = "Cannot divide by zero.";
+        }
+    }
+</script>
